@@ -2,11 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>MVC</display-name>
   <servlet>
-  <servlet-name>rs</servlet-name>
-  <servlet-class>com.nir.controller.ReadStudentServlet</servlet-class>
+  <servlet-name>ss</servlet-name>
+  <servlet-class>com.nir.controller.SearchController</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>rs</servlet-name>
-  <url-pattern>/rstudent</url-pattern>
+  <servlet-name>ss</servlet-name>
+  <url-pattern>/sstudent</url-pattern>
   </servlet-mapping>
 </web-app>

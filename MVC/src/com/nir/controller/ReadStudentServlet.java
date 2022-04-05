@@ -21,7 +21,7 @@ public class ReadStudentServlet extends HttpServlet
 	{
 		PrintWriter pw=resp.getWriter();
 		StudentDaoImpl dao=new StudentDaoImpl();
-		  int id=Integer.parseInt(req.getParameter("sid"));
+		 /* int id=Integer.parseInt(req.getParameter("sid"));
 		  String name=req.getParameter("sname");
 		  int marks=Integer.parseInt(req.getParameter("smarks"));
 		Student s=new Student(id,name,marks);
@@ -35,9 +35,9 @@ public class ReadStudentServlet extends HttpServlet
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		*/
 		
-		
-		/*try {
+		try {
 	
 	ArrayList<Student> al=dao.getStudentData();
 	
@@ -51,7 +51,7 @@ public class ReadStudentServlet extends HttpServlet
 			
 		} catch (Exception e) {
 			pw.println(e);
-		}*/
+		}
 		 
 	     
 		 
