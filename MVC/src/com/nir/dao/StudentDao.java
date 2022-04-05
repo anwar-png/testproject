@@ -6,5 +6,5 @@ public interface StudentDao
 {
 public ArrayList<Student> getStudentData() throws Exception;
 public int insertStudent(Student s) throws Exception;
-public Student searchById(int sid) throws Exception;
+public ArrayList<Student> searchById(int sid) throws Exception;
 }
