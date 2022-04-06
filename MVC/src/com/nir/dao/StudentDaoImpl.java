@@ -13,9 +13,6 @@ public class StudentDaoImpl implements StudentDao
     String URL="jdbc:oracle:thin:@localhost:1521:xe";
     String USERNAME="system";
     String PASSWORD="system123";
-    
-    static Student s;
-    
 	@Override
 	public ArrayList<Student> getStudentData() throws Exception {
 		
@@ -63,29 +60,33 @@ Connection con=DriverManager.getConnection(URL,USERNAME,PASSWORD);
 		return i;
 	}
 	
-	public Student searchById(int sid) throws Exception
+	public ArrayList<Student> searchById(int sid) throws Exception
 	{
+		ArrayList<Student> al=new ArrayList<Student>();
 		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		
 		  Connection con=DriverManager.getConnection(URL,USERNAME,PASSWORD);
 		  
-		    Statement stmt=con.createStatement();
+		   String sql="select * from student where sid=?";
+		  
+		    PreparedStatement stmt=con.prepareStatement(sql);
 		    
-	String sql="select * from student where id='"+sid+"'";
+		     stmt.setInt(1,sid);
 		    
-		     ResultSet rs=stmt.executeQuery(sql);
+		     ResultSet rs=stmt.executeQuery();
 		     
 		      while(rs.next())
 		      {
 		    	 int id=rs.getInt(1);
 		    	 String name=rs.getString(2);
 		    	 int marks=rs.getInt(3);
-		    	  s=new Student(id,name,marks); 
+		    	Student s=new Student(id,name,marks);
+		    	al.add(s);
 		      }
 
 				
-		  return s;
+		  return al;
 		
 		
 		

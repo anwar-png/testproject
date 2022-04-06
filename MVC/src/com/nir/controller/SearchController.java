@@ -24,28 +24,18 @@ public class SearchController extends HttpServlet
    
    StudentDaoImpl sdao=new StudentDaoImpl();
    
+    PrintWriter pw=resp.getWriter();
+   
      try {
-		Student s=sdao.searchById(studentId);
-		
-              int id=s.getId();
-              String name=s.getName();
-              int marks=s.getMarks();
-		
-		  PrintWriter pw=resp.getWriter();
-		  
-		   	pw.println(id+""+name+""+marks);
-		
-		
-		
+		ArrayList<Student> s=sdao.searchById(studentId);
+           HttpSession hs=req.getSession();
+           hs.setAttribute("list",s);
+          resp.sendRedirect("studentdisplay2.jsp");
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-       
-  
-  
-		
-		
+     
 	}
 
 	

@@ -26,19 +26,19 @@ public class Student
 	 }
 	 public int getId()
 	 {
-		 return id;
+		 return this.id;
 	 }
 	 public String getName()
 	 {
-		 return name;
+		 return this.name;
 	 }
 	 public int getMarks()
 	 {
-		 return marks;
+		 return this.marks;
 	 }
 	 public String toString()
 	 {
-		 return id+""+name+""+marks;
+		 return this.id+""+this.name+""+this.marks;
 	 }
 	
 }
